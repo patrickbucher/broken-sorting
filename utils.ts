@@ -1,7 +1,7 @@
 export function generateRandomNumbers(
   lower: number,
   upper: number,
-  n: number
+  n: number,
 ): Array<number> {
   const numbers: Array<number> = [];
   if (lower >= upper || n < 1) {
