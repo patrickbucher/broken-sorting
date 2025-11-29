@@ -29,5 +29,22 @@ export function insertionSort(numbers: Array<number>): Array<number> {
 }
 
 export function selectionSort(numbers: Array<number>): Array<number> {
-  return numbers;
+  const xs = [...numbers];
+  const n = xs.length;
+  for (let i = 0; i < n; i++) {
+    let min = Number.POSITIVE_INFINITY;
+    let minIndex = i;
+    for (let j = i; j < n; j++) {
+      if (xs[j] < min) {
+        min = xs[j];
+        minIndex = j;
+      }
+    }
+    if (minIndex != i) {
+      const swap = xs[i];
+      xs[i] = xs[minIndex];
+      xs[minIndex] = swap;
+    }
+  }
+  return xs;
 }
