@@ -41,10 +41,14 @@ export function selectionSort(numbers: Array<number>): Array<number> {
       }
     }
     if (minIndex != i) {
-      const swap = xs[i];
-      xs[i] = xs[minIndex];
-      xs[minIndex] = swap;
+      swap(xs, i, minIndex);
     }
   }
   return xs;
+}
+
+function swap(numbers: Array<number>, i: number, j: number) {
+  const swap = numbers[i];
+  numbers[i] = numbers[j];
+  numbers[j] = swap;
 }
