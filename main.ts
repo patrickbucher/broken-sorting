@@ -15,7 +15,7 @@ function generateRandomNumbers(
   return numbers;
 }
 
-const numbers = generateRandomNumbers(1, 100, 10);
+const numbers = generateRandomNumbers(1, 100, 25);
 console.log(`Original:       ${numbers.join(" ")}`);
 console.log(`Built-In Sort:  ${numbers.toSorted((a, b) => a - b).join(" ")}`);
 console.log(`Bubble Sort:    ${bubbleSort(numbers).join(" ")}`);
