@@ -17,7 +17,7 @@ function generateRandomNumbers(
 
 const numbers = generateRandomNumbers(1, 100, 10);
 console.log(`Original:       ${numbers.join(" ")}`);
-console.log(`Built-In Sort:  ${numbers.toSorted().join(" ")}`);
+console.log(`Built-In Sort:  ${numbers.toSorted((a, b) => a - b).join(" ")}`);
 console.log(`Bubble Sort:    ${bubbleSort(numbers).join(" ")}`);
 console.log(`Insertion Sort: ${insertionSort(numbers).join(" ")}`);
 console.log(`Selection Sort: ${selectionSort(numbers).join(" ")}`);
