@@ -1,7 +1,7 @@
 export function bubbleSort(numbers: Array<number>): Array<number> {
   const xs = [...numbers];
   const n = xs.length;
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; !isSorted(xs) && i < n; i++) {
     for (let j = i; j < n - 1; j++) {
       if (xs[j] > xs[j + 1]) {
         swap(xs, j, j + 1);
