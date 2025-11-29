@@ -43,6 +43,19 @@ export function selectionSort(numbers: Array<number>): Array<number> {
   return xs;
 }
 
+export function isSorted(numbers: Array<number>): boolean {
+  const n = numbers.length;
+  if (n <= 1) {
+    return true;
+  }
+  for (let i = 1; i < n; i++) {
+    if (numbers[i] > numbers[i + 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+
 function swap(numbers: Array<number>, i: number, j: number) {
   const swap = numbers[i];
   numbers[i] = numbers[j];

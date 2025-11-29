@@ -1,5 +1,5 @@
 import { assertEquals } from "@std/assert";
-import { bubbleSort, insertionSort, selectionSort } from "./sort.ts";
+import { bubbleSort, insertionSort, isSorted, selectionSort } from "./sort.ts";
 import { generateRandomNumbers } from "./utils.ts";
 
 const randLower = 1;
@@ -40,4 +40,14 @@ Deno.test("Selection Sort Randomized", () => {
   const numbers = generateRandomNumbers(randLower, randUpper, randSize);
   const expected = numbers.toSorted((a, b) => a - b);
   assertEquals(selectionSort(numbers), expected);
+});
+
+Deno.test("Sorted", () => {
+  const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  assertEquals(isSorted(numbers), true);
+});
+
+Deno.test("Unsorted", () => {
+  const numbers = [9, 1, 8, 0, 2, 7, 3, 6, 4, 5];
+  assertEquals(!isSorted(numbers), true);
 });
