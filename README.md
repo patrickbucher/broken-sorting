@@ -45,4 +45,7 @@ Once the commit has been found, reset to HEAD and finish bisecting:
 
     git bisect reset
 
-Now the found commit can be reverted.
+Now the found commit can be reverted:
+
+    git revert COMMIT
+
