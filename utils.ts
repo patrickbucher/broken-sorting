@@ -8,7 +8,11 @@ export function generateRandomNumbers(
     return numbers;
   }
   for (let i = 0; i < n; i++) {
-    numbers.push(Math.floor(Math.random() * (upper - lower + 1)) + lower);
+    numbers.push(generateRandomNumber(lower, upper));
   }
   return numbers;
+}
+
+function generateRandomNumber(lower: number, upper: number): number {
+  return Math.floor(Math.random() * (upper - lower + 1)) + lower;
 }
