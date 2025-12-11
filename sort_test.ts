@@ -51,3 +51,24 @@ Deno.test("Unsorted", () => {
   const numbers = [9, 1, 8, 0, 2, 7, 3, 6, 4, 5];
   assertEquals(!isSorted(numbers), true);
 });
+
+Deno.bench("Bubble Sort Benchmark", () => {
+  const numbers = generateRandomNumbers(randLower, randUpper, randSize);
+  const expected = numbers.toSorted((a, b) => a - b);
+  const actual = bubbleSort(numbers);
+  assertEquals(actual, expected);
+});
+
+Deno.bench("Selection Sort Benchmark", () => {
+  const numbers = generateRandomNumbers(randLower, randUpper, randSize);
+  const expected = numbers.toSorted((a, b) => a - b);
+  const actual = selectionSort(numbers);
+  assertEquals(actual, expected);
+});
+
+Deno.bench("Insertion Sort Benchmark", () => {
+  const numbers = generateRandomNumbers(randLower, randUpper, randSize);
+  const expected = numbers.toSorted((a, b) => a - b);
+  const actual = insertionSort(numbers);
+  assertEquals(actual, expected);
+});
